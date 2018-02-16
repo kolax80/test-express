@@ -1,0 +1,23 @@
+<h2><%=text%></h2>
+<% if( typeof name != 'undefined'){ %>
+<h3>Hello <%=name%></h3>
+<% } %>
+<!-- или можно так проверить -->
+<% if( locals.time ){ %>
+<h3>Дата: <%=time%></h3>
+<% } %>
+<% if(locals.items){ %>
+  <ul>
+    <% for(var i=0; i < items.length; i++ ){ %>
+      <li>№ <%=items[i].id%> - <%=items[i].name %></li>
+    <% } %>
+  </ul>
+<% } %>
+<h1>Введите данные</h1>
+    <form action="/" method="post">
+        <label>Номер</label><br>
+        <input type="text" name="userName" /><br><br>
+        <label>Имя</label><br>
+        <input type="text" name="userAge" /><br><br>
+        <input type="submit" value="Отправить" />
+    </form>
